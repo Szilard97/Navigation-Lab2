@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">NavigationApp</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="singInFirstActivity">Sing in</string>
+    <string name="singUP">Sing Up</string>
+    <string name="title_activity_profile">profileActivity</string>
+    <string name="firstNameInput">Name</string>
+    <string name="lastNameInput">Name</string>
+    <string name="registerButton">Register</string>
+    <string name="title_activity_register">registerActivity</string>
+    <string name="callRegister">Number of call from register page:</string>
+    <string name="callProfile">Number of call from Profile:</string>
+    <string name="profileText">Profile</string>
+    <string name="number_of_calls_from_register_page">Number of calls from Register page</string>
+    <string name="number_o_calls_from_singn_up_page">Number o calls from Singn up page</string>
+    <string name="backButtonProfile">Back</string>
+    <string name="registerText">Register</string>
+    <string name="first_nameRegister">First name</string>
+    <string name="last_nameRegister">Last name</string>
+    <string name="departmentRegister">Department</string>
+    <string name="number_of_calls_from_sign_in_pageRegister">Number of calls from Sign in page:</string>
+    <string name="number_of_calls_fom_profileRegister">Number of calls fom profile:</string>
+    <string name="registerButtonRegister">REGISTER</string>
+</resources>
