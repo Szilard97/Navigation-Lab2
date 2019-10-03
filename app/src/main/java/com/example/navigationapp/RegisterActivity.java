@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -16,7 +17,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText firstName ;
     private EditText lastName  ;
     private EditText departmentName ;
-    private Button buttonRegisterRegister ;
+    private Button buttonRegisterRegister;
+    private TextView nrCallOfSignIn;
+    private TextView nrOfCallsFromProfileTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +37,7 @@ public class RegisterActivity extends AppCompatActivity {
     public void onClickListener(){
         buttonRegisterRegister.setOnClickListener(new View.OnClickListener() {
 
-            Intent intent = new Intent(RegisterActivity.this, ProfileActivity.class);
+            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
             public void onClick(View v) {
 
 
@@ -51,13 +54,32 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 if (!departmentName.getText().toString().isEmpty()){
                     intent.putExtra("Department",departmentName.getText().toString());
-                    startActivity(intent);
+                    startActivityForResult(intent, 1);
 
                 }else {
                     Toast.makeText(RegisterActivity.this, "Department is empty", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        nrCallOfSignIn = findViewById(R.id.nrCallOfSignIn);
+        nrOfCallsFromProfileTextView = findViewById(R.id.nrOfCallsFromProfileTextView);
+
+        if (requestCode == 2 && resultCode == RESULT_OK) {
+
+            nrCallOfSignIn.setText(data.getStringExtra("message"));
+
+        }
+
+        if  ( requestCode == 3 && resultCode == RESULT_OK) {
+
+            nrOfCallsFromProfileTextView.setText(data.getStringExtra("message1"));
+        }
     }
 
     @Override

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonRegister;
     private TextView nrCallValue;
     private TextView numberRegister;
+    private static Integer nr3 = 0;
 
 
     @Override
@@ -68,4 +69,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
 }
