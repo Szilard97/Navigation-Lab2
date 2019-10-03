@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Integer numberRegisterValueInteger = 0;
     private Integer nrCallValueInteger = 0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(getApplicationContext(), ProfileActivity.class), 2);
+                //startActivity(new Intent(MainActivity.this, ProfileActivity.class));
 
             }
         });
@@ -42,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivityForResult(new Intent(getApplicationContext(), RegisterActivity.class), 3);
+                //startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+
 
             }
         });
