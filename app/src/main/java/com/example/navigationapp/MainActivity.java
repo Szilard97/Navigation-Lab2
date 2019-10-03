@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         buttonSingUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ProfileActivity.class));
+                startActivityForResult(new Intent(getApplicationContext(), ProfileActivity.class), 2);
 
             }
         });
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+                startActivityForResult(new Intent(getApplicationContext(), RegisterActivity.class), 3);
 
             }
         });
@@ -50,21 +50,20 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);
         nrCallValue = findViewById(R.id.NrCallValue);
         numberRegister = findViewById(R.id.numberRegisterValue);
 
+        if (requestCode == 2 && resultCode == RESULT_OK) {
 
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            if (resultCode == Activity.RESULT_OK) {
-                ++nrCallValueInteger;
-            }
-            if (resultCode == Activity.RESULT_CANCELED) {
-                //Write your code if there's no result
-            }
+            nrCallValue.setText(data.getStringExtra("message"));
+
         }
 
-        nrCallValue.setText(nrCallValueInteger);
+        if  ( requestCode == 3 && resultCode == RESULT_OK) {
+
+            numberRegister.setText(data.getStringExtra("message1"));
+        }
     }
 
 }

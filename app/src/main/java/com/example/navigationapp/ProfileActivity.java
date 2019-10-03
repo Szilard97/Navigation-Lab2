@@ -8,18 +8,22 @@ import android.os.Bundle;
 
 public class ProfileActivity extends AppCompatActivity {
 
+    private static Integer nr1= 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        //onBackPressed();
+
     }
 
     @Override
     public void onBackPressed() {
+        ++nr1;
         Intent returnIntent = new Intent();
-        returnIntent.putExtra("hasBackPressed",true);
+        returnIntent.putExtra("message",nr1.toString());
         setResult(Activity.RESULT_OK,returnIntent);
         finish();
+
     }
 }
