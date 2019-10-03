@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonRegister;
     private TextView nrCallValue;
     private TextView numberRegister;
-    private Integer numberRegisterValueInteger = 0;
-    private Integer nrCallValueInteger = 0;
 
 
     @Override

@@ -12,4 +12,15 @@ public class Users {
         this.department = department;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
 }
