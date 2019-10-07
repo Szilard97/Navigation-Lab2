@@ -20,47 +20,54 @@ public class RegisterActivity extends AppCompatActivity {
     private Button buttonRegisterRegister;
     private TextView nrCallOfSignIn;
     private TextView nrOfCallsFromProfileTextView;
+    private TextView textViewBackDetalies;
+    private String string;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-
         firstName = findViewById(R.id.firstNameIdRegister);
         lastName = findViewById(R.id.lastNameRegister);
         departmentName = findViewById(R.id.departmantRegister);
         buttonRegisterRegister = findViewById(R.id.buttonRegister);
+        textViewBackDetalies = findViewById(R.id.textViewBackDetalies);
 
         onClickListener();
-
+        textViewBackDetalies.setText(string);
     }
+
+
+
     public void onClickListener(){
         buttonRegisterRegister.setOnClickListener(new View.OnClickListener() {
 
-            Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
+           Intent intent = new Intent(getApplicationContext(), ProfileActivity.class);
             public void onClick(View v) {
-
-
                 if(!firstName.getText().toString().isEmpty()){
                     intent.putExtra("FirstName" ,firstName.getText().toString());
+                    //string += firstName.getText().toString();
 
                 }else {
                     Toast.makeText(RegisterActivity.this, "First name is empty", Toast.LENGTH_SHORT).show();
                 }
                 if (!lastName.getText().toString().isEmpty()){
                     intent.putExtra("LastName", lastName.getText().toString());
+                    //string += " " +  lastName.getText().toString();
                 }else{
                     Toast.makeText(RegisterActivity.this, "Last name is empty", Toast.LENGTH_SHORT).show();
                 }
                 if (!departmentName.getText().toString().isEmpty()){
                     intent.putExtra("Department",departmentName.getText().toString());
+                    //string += " " + departmentName.getText().toString();
                     startActivityForResult(intent, 1);
-
                 }else {
                     Toast.makeText(RegisterActivity.this, "Department is empty", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
     }
 
     @Override

@@ -5,8 +5,8 @@
     <string name="singInFirstActivity">Sing in</string>
     <string name="singUP">Sing Up</string>
     <string name="title_activity_profile">profileActivity</string>
-    <string name="firstNameInput">Name</string>
-    <string name="lastNameInput">Name</string>
+    <string name="firstNameInput">First name</string>
+    <string name="lastNameInput">Last name</string>
     <string name="registerButton">Register</string>
     <string name="title_activity_register">registerActivity</string>
     <string name="callRegister">Number of call from register page:</string>

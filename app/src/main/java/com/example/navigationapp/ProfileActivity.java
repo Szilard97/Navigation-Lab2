@@ -13,6 +13,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     private static Integer nr1= 0;
     public Users users;
+    private Registered registered;
     ArrayList <Users> usersArrayList = new ArrayList<>();
     private String firstName;
     private String lastName;
@@ -53,6 +54,8 @@ public class ProfileActivity extends AppCompatActivity {
        firstNameview = findViewById(R.id.textViewFirstName);
        lastNameView = findViewById(R.id.textViewLastName);
        departmentView= findViewById(R.id.textViewDepartmantProfile);
+
+
        firstNameview.setText(users.getFirstName());
        lastNameView.setText(users.getLastName());
        departmentView.setText(users.getDepartment());
@@ -65,7 +68,8 @@ public class ProfileActivity extends AppCompatActivity {
         lastName = intent.getStringExtra("LastName");
         department = intent.getStringExtra("Department");
         users = new Users(firstName, lastName, department);
-        usersArrayList.add(users);
+        registered = new Registered(users);
+
     }
 
 
